@@ -62,46 +62,85 @@
             <i class="bx bx-log-out" id="log_out"></i>
           </li>
         </ul>
-      </div>
+    </div>
 
-      <section class="home-section">
-            <div class="container-juegos">
-
+    <section class="users-section">
+          <div class="container-usuarios">
+            <h1>Usuarios GameSoft</h1>
+            <div id="OrderDiv" style="display: flex; flex-direction: row;">
+              <h3>Ordenar por:</h3>
+              <button id="OrdName">Nombre</button>
+              <button id="OrdAuthor">Identificación</button>
+              <button id="OrdYear">Nacionalidad</button>
+              <button id="OrdAvailable">Correo</button>
+              <button id="OrdInverter">Reverse Order</button>
             </div>
-            <div class="container-datos">
-                <div class="user-options">
-                    <a href="">
-                        <div class="option-user">
-                            <i class='bx bx-user-plus' style='color:#ffffff'></i>
-                            <p>Añadir</p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="option-user">
-                            <i class='bx bxs-user-detail'></i>
-                            <p>Modificar</p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="option-user">
-                            <i class='bx bxs-user-badge' style='color:#ffffff' ></i>
-                            <p>Listar</p>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="option-user">
-                            <i class='bx bx-user-minus' style='color:#ffffff' ></i>
-                            <p>Eliminar</p>
-                        </div>
-                    </a>
+            <table id="ListUsers"></table>
+          </div>
+          <div class="container-datos">
+              <div class="user-options">
+                <div class="option-user" id="AddUser">
+                  <i class='bx bx-user-plus' style='color:#ffffff'></i>
+                  <p>Añadir</p>
+                </div>  
+                <div class="option-user" id="ModifyUser">
+                    <i class='bx bxs-user-detail' style='color:#ffffff'></i>
+                    <p>Modificar</p>
                 </div>
-                <div class="">
-
+                <div class="option-user" id="DeleteUser">
+                    <i class='bx bx-user-minus' style='color:#ffffff' ></i>
+                    <p>Eliminar</p>
                 </div>
-                
+              </div>
+              <div id="sidebar">
+                <h2 id="NameForm"></h2>
+                <p id="TextList">Seleccione una opción del menú superior</p>
+                <div id="Formulario" class="login-box hide">
+                  <form>
+                    <div class="user-box">
+                      <input type="text" name="" required="" id="Id">
+                      <label>Identificación</label>
+                    </div>
+                    <div class="user-box">
+                      <input type="text" name="" required="" id="Name">
+                      <label>Nombres</label>
+                    </div>
+                    <div class="user-box">
+                      <input type="text" name="" required="" id="LastName">
+                      <label>Apellidos</label>
+                    </div>
+                    <div class="user-box">
+                      <input type="email" name="" required="" id="Email">
+                      <label>Correo</label>
+                    </div>
+                    <div class="user-box">
+                      <input type="tel" name="" required="" id="Phone">
+                      <label>Telefono</label>
+                    </div>
+                    <div class="user-box">
+                      <input type="date" name="" required="" value="2005-01-01" id="Date">
+                      <label>Fecha de Nacimiento</label>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                      <select name="" id="Nacionalidad" style="order: 2;">
+                        <option value="0" selected>Seleccione...</option>
+                      </select>
+                      <label style="order: 1;">Nacionalidad</label>
+                    </div>
+                  </form>
+                </div>
+                <button id="EnviarDatos">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Registrar
+                </button>
             </div>
-      </section>
+          </div>
+    </section>
 
-      <script src="scripts\main.js"></script>
+      <script type="module" src="scripts\main.js"></script>
+      <script type="module" src="scripts\usuarios.js"></script>
 </body>
 </html>

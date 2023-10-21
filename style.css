@@ -346,18 +346,17 @@ body{
 }
 
 .user-options{
-  margin-left: 75%;
   display: flex;
-  width: 25%;
+  width: 100%;
   justify-content: space-around;
   background-color: #000000;
   border-bottom-left-radius: 20px;
   padding: 10px 0;
 }
 
-.user-options a{
-  text-decoration: none;
-  color: var(--color-light);
+.user-options .option-user{
+  display: flex;
+  flex-direction: column;
 }
 
 .user-options div{
@@ -371,9 +370,162 @@ body{
   width: 100%;
   text-align: center;
   font-size: 14px;
-  
+  color: #FFFFFF;
 }
 
 .bx{
   font-size: 30px;
 }
+
+.users-section{
+  position: relative;
+  background-color: var(--color-body);
+  min-height: 100vh;
+  display: inline-flex;
+  top:0;
+  left:78px;
+  width: calc(100% - 78px);
+  transition: all .5s ease;
+  z-index: 2;
+}
+
+.container-usuarios{
+  padding: 18px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container-datos{
+  width: 25%;
+  min-height: 100vh;
+}
+
+
+/* Estilos SideBar */
+#sidebar {
+  width: 100%;
+  background: rgb(255, 255, 255);
+  box-sizing: border-box;
+  border-top-left-radius: 20px;
+  transition: all .3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 90vh;
+}
+
+#sidebar p{
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 14px;
+}
+
+.hide{
+  display: none;
+}
+
+/* Estilos Formulario */
+.login-box {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #000000;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 8px 0;
+  font-size: 12px;
+  color: #000000;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box label {
+  top:0;
+  left: 0;
+  padding: 8px 0;
+  font-size: 12px;
+  color: #000000;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box select:focus ~ label{
+  color: var(--color-default);
+  font-size: 10px;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -15px;
+  left: 0;
+  color: var(--color-default);
+  font-size: 10px;
+}
+
+.login-box form button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--color-default);
+  background-color: #FFFFFF;
+  border: none;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+#EnviarDatos{
+  width: 35%;
+  border-radius: 10px;
+  height: auto;
+  border: none;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+#EnviarDatos:hover {
+  background: var(--color-default);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--color-default),
+              0 0 25px var(--color-default),
+              0 0 50px var(--color-default),
+              0 0 100px var(--color-default);
+}
+
