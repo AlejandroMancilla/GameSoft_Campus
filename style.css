@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root{
-  --color-default:#004f83;
-  --color-second:#0067ac;
+  --color-default:#0970b5;
+  --color-second:#024877;
   --color-white:#fff;
-  --color-body:#e4e9f7;
+  --color-body:#cdcece;
   --color-light:#e0e0e0;
 }
 
@@ -343,4 +343,37 @@ body{
 
 .slider-nav a:hover{
     opacity: 1;
+}
+
+.user-options{
+  margin-left: 75%;
+  display: flex;
+  width: 25%;
+  justify-content: space-around;
+  background-color: #000000;
+  border-bottom-left-radius: 20px;
+  padding: 10px 0;
+}
+
+.user-options a{
+  text-decoration: none;
+  color: var(--color-light);
+}
+
+.user-options div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.user-options p{
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  
+}
+
+.bx{
+  font-size: 30px;
 }
