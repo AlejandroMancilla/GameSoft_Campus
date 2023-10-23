@@ -20,7 +20,7 @@ export function CalcularValores(Precio){
     let Iva = (Precio + Impuesto) * 0.19
     let Total = Precio + Impuesto + Iva
     console.log(Impuesto, Iva, Total)
-    return [Impuesto, Iva, Total]
+    return [formatearNumero(Precio), formatearNumero(Impuesto), formatearNumero(Iva), formatearNumero(Total)]
 }
 
 export function AsignarJuego(Usuario, Juego){
@@ -39,6 +39,10 @@ export function AsignarJuego(Usuario, Juego){
             break;
         }
     }
+}
+
+function formatearNumero(numero){
+    return new Intl.NumberFormat("es-CL").format(numero);
 }
 
 export {Juegos}

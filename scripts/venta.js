@@ -33,6 +33,7 @@ window.addEventListener('load', function(){
     })
 })
 
+let Valores = 0;
 let Precio = 0;
 btnGenerar.addEventListener('click', function(){
     Usuarios.forEach(function(User){
@@ -53,15 +54,23 @@ btnGenerar.addEventListener('click', function(){
             Precio = Game.Precio
         }
     });
-    let Valores = 0;
     Valores = CalcularValores(Precio);
-    IfNeto.innerHTML = `Valor Licencia = $${Precio}`
-    IfImpuesto.innerHTML = `Impuesto = $${Valores[0]}`
-    IfIva.innerHTML = `IVA = $${Valores[1]}`
-    IfTotal.innerHTML = `Valor Total = $${Valores[2]}`
+    IfNeto.innerHTML = `Valor Licencia = $${Valores[0]}`
+    IfImpuesto.innerHTML = `Impuesto = $${Valores[1]}`
+    IfIva.innerHTML = `IVA = $${Valores[2]}`
+    IfTotal.innerHTML = `Valor Total = $${Valores[3]}`
 });
 
 btnComprar.addEventListener('click', function(){
-    AsignarJuego(SltUsuario.value, SltJuego.value);
-    localStorage.setItem("Users", JSON.stringify(Usuarios));
+    Usuarios.forEach(function(User){
+        if(User.Id == SltUsuario.value){
+            if(User.Juegos.includes(SltJuego.value)){
+                alert('USUARIO YA CUENTA CON ESTA LICENCIA')
+            }else{
+                if(confirm(`CONFIRMAR COMPRA\n\n\tID Usuario: ${SltUsuario.value}\n\tID Juego: ${SltJuego.value}\n\tValor Total: $${Valores[3]} `))
+                AsignarJuego(SltUsuario.value, SltJuego.value);
+                localStorage.setItem("Users", JSON.stringify(Usuarios));
+            }
+        }
+    })
 })
