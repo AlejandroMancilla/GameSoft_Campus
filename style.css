@@ -614,6 +614,9 @@ table input {
 #ListGames {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -768,4 +771,155 @@ table input {
     clip-path: var(--slice-1);
     transform: translate(0);
   }
+}
+
+.button-50,
+.button-50:after {
+  width: 200px;
+  height: 30px;
+  font-size: 12px;
+  background: linear-gradient(45deg, transparent 5%, var(--color-second) 5%);
+  border: 0;
+  color: #ffffff;
+  box-shadow: 6px 0px 0px var(--color-default);
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: 'Poppins', sans-serif;
+  margin: 0 5px;
+}
+
+.button-50:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, var(--color-default) 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-50:hover{
+  background: linear-gradient(45deg, transparent 5%, var(--color-default) 5%);
+  color: #fff;
+  font-weight: bold;
+}
+
+.button-50:hover:after {
+  animation: .5s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+.button-50:active{
+  transform: scale(0.9);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+/*ESTILOS VENTA DE JUEGOS*/
+.selectores {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.selectores h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 55px;
+  color: var(--color-white);
+  text-shadow: black 0.1em 0.1em 0.2em;
+  margin-bottom: 40px;
+}
+
+.selectores h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 25px;
+  color: var(--color-black);
+  text-shadow: rgb(255, 255, 255) 0.1em 0.1em 0.2em
+}
+
+.selectores select {
+  margin: 5px 30px 30px 30px;
+}
+
+.selectores button {
+  margin-top: 20px;
+}
+
+.factura {
+  width: 60%;
+  padding: 20px 120px;
+  background-color: var(--color-white);
+  border-left: 4px solid black;
+}
+
+.factura h1 {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 55px;
+  color: var(--color-default);
+  text-shadow: var(--color-white) 0.1em 0.1em 0.2em
+}
+
+.factura h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: var(--color-black);
+}
+
+.factura p {
+  padding: 0 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+hr{
+  height: 4px;
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.Info{
+  background-color: #0970b555;
+  border-radius: 10px;
+  padding: 10px;
 }

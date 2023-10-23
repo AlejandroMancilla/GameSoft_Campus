@@ -1,3 +1,5 @@
+import { Juegos } from "./ActualizarDatos.js"
+
 //LLAMAR ELEMENTOS - JUEGOS
 const btnAddGame = document.getElementById('AddGame');
 const btnDeleteGame = document.getElementById('DeleteGame');
@@ -36,7 +38,6 @@ btnInvertir.addEventListener('click', function(){
 let OpcGame = 0;
 const TbUsers = document.getElementById('ListGames');
 let JuegoSeleccionado = 0;
-let Juegos = [];
 let Ids = [];
 const Tematicas = ['Aventura', 'Ciencia Ficción', 'Fantasía', 'Terror'];
 
@@ -84,7 +85,8 @@ function CrearJuego(){
         Name : inpName.value.trim(),
         Precio : inpPrecio.value.trim(),
         Puntos : inpPuntos.value.trim(),
-        Tematica : inpTema.value
+        Tematica : inpTema.value,
+        Vendidos : 0
     };
     Juegos.push(Game);
     alert('Juego Añadido Exitosamente');
@@ -207,9 +209,6 @@ const makeRandomId= () => {
    }
 };
 
-//CARGAR DATOS DE LOCAL STORAGE
-window.addEventListener('load', function() {
-    Juegos = JSON.parse(localStorage.getItem("Games")  || "[]");
-    console.log(Juegos)
-    ActualizarLista();
-});
+window.addEventListener('load', function(){
+  ActualizarLista();
+})

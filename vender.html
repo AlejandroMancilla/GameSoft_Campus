@@ -57,6 +57,55 @@
         </ul>
       </div>
 
+      <section class="users-section">
+        <div class="selectores">
+          <h1>Venta de Juego</h1>
+          <h3>Seleccione el Usuario de la siguiente lista</h3>
+          <select name="Usuario" id="Usuario">
+            <option value="0">Seleccione Usuario...</option>
+          </select>
+          <h3>Seleccione el Juego de la siguiente lista</h3>
+          <select name="Juego" id="Juego">
+            <option value="0">Seleccione Juego...</option>
+          </select>
+          <button id="GenerarFactura" class="button-50">Generar Factura</button>
+        </div>
+        <div class="factura">
+          <h1>Detalle de compra</h2>
+          <hr>
+          <div class="Info">
+            <h3>Info de Usuario</h3>
+            <p id="IdComprador">ID: </p>
+            <p id="NombreComprador">Usuario: </p>
+            <p id="CorreoComprador">Correo: </p>
+            <p id="TelefonoComprador">Telefono: </p>
+            <p id="PuntosUsuario">Puntos Ganados: </p>
+          </div>
+          <hr>
+          <div class="Info">
+            <h3>Info del Juego</h3>
+            <p id="IdJuego">ID: </p>
+            <p id="NombreJuego">Juego: </p>
+            <p id="TematicaJuego">Tematica: </p>
+            <p id="PuntosJuego">Puntos Otorgados: </p>
+          </div>
+          <hr>
+          <div class="Info">
+            <h3>Info de Precio</h3>
+            <p id="Neto">Valor Licencia: </p>
+            <p id="Impuesto">Impuesto: </p>
+            <p id="Iva">IVA: </p>
+            <p id="Total">Total a Pagar: </p>
+          </div>
+          <hr>
+          <div class="Confirmar">
+            <button id="ComprarJuego" class="button-50">Confirmar Compra</button>
+          </div>
+          
+        </div> 
+      </section>
       <script src="scripts\main.js"></script>
+      <script type="module" src="scripts\venta.js"></script>
+      <script type="module" src="scripts/ActualizarDatos.js"></script>
 </body>
 </html>
