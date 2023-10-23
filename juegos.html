@@ -69,10 +69,12 @@
         <h1>VideoJuegos - GameSoft</h1>
         <div id="OrderDiv" style="display: flex; flex-direction: row;">
           <h3>Ordenar por:</h3>
-          <button id="OrdId">ID</button>
-          <button id="OrdName">Nombre</button>
+          <button id="OrdGame">Nombre</button>
+          <button id="OrdPrecio">Valor</button>
+          <button id="OrdTema">Tematica</button>
+          <button id="OrdInverter">Invertir</button>
         </div>
-        <table id="ListGames"></table>
+        <div id="ListGames"></div>
       </div>
       <div class="container-datos">
           <div class="user-options">
@@ -91,43 +93,36 @@
             <div id="Formulario" class="login-box hide">
               <form>
                 <div class="user-box">
-                  <input type="text" name="" required="" id="Id">
-                  <label>Identificación</label>
+                  <input type="text" name="" required="" id="Game">
+                  <label>Nombre</label>
                 </div>
                 <div class="user-box">
-                  <input type="text" name="" required="" id="Name">
-                  <label>Nombres</label>
+                  <input type="text" name="" required="" id="Cover">
+                  <label>Portada</label>
                 </div>
                 <div class="user-box">
-                  <input type="text" name="" required="" id="LastName">
-                  <label>Apellidos</label>
+                  <input type="text" name="" required="" id="Precio">
+                  <label>Valor Licencia</label>
                 </div>
                 <div class="user-box">
-                  <input type="email" name="" required="" id="Email">
-                  <label>Correo</label>
-                </div>
-                <div class="user-box">
-                  <input type="tel" name="" required="" id="Phone">
-                  <label>Telefono</label>
-                </div>
-                <div class="user-box">
-                  <input type="date" name="" required="" value="2005-01-01" id="Date">
-                  <label>Fecha de Nacimiento</label>
+                  <input type="number" name="" required="" id="Puntos">
+                  <label>Puntos Fidelización</label>
                 </div>
                 <div style="display: flex; flex-direction: column;">
-                  <select name="" id="Nacionalidad" style="order: 2;">
+                  <select name="" id="Tematica" style="order: 2;">
                     <option value="0" selected>Seleccione...</option>
                   </select>
-                  <label style="order: 1;">Nacionalidad</label>
+                  <label style="order: 1;">Tematica</label>
                 </div>
               </form>
             </div>
-            <button id="EnviarDatos">Registrar</button>
+            <button id="EnviarDatos"></button>
          </div>
         </div>
     </section>
 
   <script type="module" src="scripts\main.js"></script>
-  <script type="module" src="scripts\usuarios.js"></script>
+  <script type="module" src="scripts\juegos.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,12 @@
+//LLAMAR ELEMENTOS - USUARIOS
+const btnAddUser = document.getElementById('AddUser');
+const btnModifyUser = document.getElementById('ModifyUser');
+const btnDeleteUser = document.getElementById('DeleteUser');
+const btnEnviar = document.getElementById('EnviarDatos');
+const Title = document.getElementById('NameForm');
+const TextDiv = document.getElementById('TextList');
+const Formulario = document.getElementById('Formulario');
+
 //Llamado Inputs de Formulario
 const inpId = document.getElementById('Id');
 const inpName = document.getElementById('Name');
@@ -11,7 +20,7 @@ const inpNacion = document.getElementById('Nacionalidad');
 const btnOrdID = document.getElementById('OrdId');
 btnOrdID.addEventListener('click', function(){
     OrdenarUsuarios(1);
-}); 
+});
 const btnOrdName = document.getElementById('OrdName');
 btnOrdName.addEventListener('click', function(){
     OrdenarUsuarios(2);
@@ -29,12 +38,56 @@ btnInvertir.addEventListener('click', function(){
     OrdenarUsuarios(5);
 });
 
+//CONSTANTES Y VARIABLES DE PAGINA
+let OpcUser = 0;
 const TbUsers = document.getElementById('ListUsers');
-
 const paises = ["Afganistán","Albania","Alemania","Andorra","Angola","Antigua y Barbuda","Arabia Saudita","Argelia","Argentina","Armenia","Australia","Austria","Azerbaiyán","Bahamas","Bangladés","Barbados","Baréin","Bélgica","Belice","Benín","Bielorrusia","Birmania","Bolivia","Bosnia y Herzegovina","Botsuana","Brasil","Brunéi","Bulgaria","Burkina Faso","Burundi","Bután","Cabo Verde","Camboya","Camerún","Canadá","Catar","Chad","Chile","China","Chipre","Ciudad del Vaticano","Colombia","Comoras","Corea del Norte","Corea del Sur","Costa de Marfil","Costa Rica","Croacia","Cuba","Dinamarca","Dominica","Ecuador","Egipto","El Salvador","Emiratos Árabes Unidos","Eritrea","Eslovaquia","Eslovenia","España","Estados Unidos","Estonia","Etiopía","Filipinas","Finlandia","Fiyi","Francia","Gabón","Gambia","Georgia","Ghana","Granada","Grecia","Guatemala","Guyana","Guinea","Guinea ecuatorial","Guinea-Bisáu","Haití","Honduras","Hungría","India","Indonesia","Irak","Irán","Irlanda","Islandia","Islas Marshall","Islas Salomón","Israel","Italia","Jamaica","Japón","Jordania","Kazajistán","Kenia","Kirguistán","Kiribati","Kuwait","Laos","Lesoto","Letonia","Líbano","Liberia","Libia","Liechtenstein","Lituania","Luxemburgo","Madagascar","Malasia","Malaui","Maldivas","Malí","Malta","Marruecos","Mauricio","Mauritania","México","Micronesia","Moldavia","Mónaco","Mongolia","Montenegro","Mozambique","Namibia","Nauru","Nepal","Nicaragua","Níger","Nigeria","Noruega","Nueva Zelanda","Omán","Países Bajos","Pakistán","Palaos","Palestina","Panamá","Papúa Nueva Guinea","Paraguay","Perú","Polonia","Portugal","Reino Unido","República Centroafricana","República Checa","República de Macedonia","República del Congo","República Democrática del Congo","República Dominicana","República Sudafricana","Ruanda","Rumanía","Rusia","Samoa","San Cristóbal y Nieves","San Marino","San Vicente y las Granadinas","Santa Lucía","Santo Tomé y Príncipe","Senegal","Serbia","Seychelles","Sierra Leona","Singapur","Siria","Somalia","Sri Lanka","Suazilandia","Sudán","Sudán del Sur","Suecia","Suiza","Surinam","Tailandia","Tanzania","Tayikistán","Timor Oriental","Togo","Tonga","Trinidad y Tobago","Túnez","Turkmenistán","Turquía","Tuvalu","Ucrania","Uganda","Uruguay","Uzbekistán","Vanuatu","Venezuela","Vietnam","Yemen","Yibuti","Zambia","Zimbabue"];
-
 let FilaSeleccionada = 0;
 let Usuarios = [];
+
+//FUNCIONES PARA GESTIÓN DE USUARIOS
+btnAddUser.addEventListener('click', function(){
+    CrearFormulario('Registrar', "Ingrese los siguientes datos");
+    OpcUser = 1;
+});
+
+btnModifyUser.addEventListener('click', function(){
+    CrearFormulario('Modificar', "Seleccione un Usuario de la lista");
+    OpcUser = 2;
+})
+
+btnDeleteUser.addEventListener('click', function(){
+    CrearFormulario('Eliminar', "Seleccione un Usuario de la lista");
+    OpcUser = 3;
+})
+
+btnEnviar.addEventListener('click', function(){
+    switch(OpcUser){
+        case 1:
+            CrearUsuario();
+            break;
+        case 2:
+            ModificarUsuario();
+            break;
+        case 3:
+            BorrarUsuario();
+            break;
+    }
+    Title.textContent = '';
+    TextDiv.textContent = 'Seleccione una opción del menú superior';
+    btnEnviar.textContent = '';
+    Formulario.classList = 'login-box hide';
+});
+
+function CrearFormulario(text, parrafo){
+    Formulario.classList = 'login-box';
+    Title.textContent = text + ' Usuario';
+    TextDiv.textContent = parrafo;
+    btnEnviar.textContent = text;
+    for(let i=0; i<paises.length; i++){
+        inpNacion.innerHTML += `'<option value ='${paises[i]}'>${paises[i]}</option>`;
+    }
+};
 
 
 // CREAR UN NUEVO USUARIO VALIDANDO ENTRADAS
@@ -51,7 +104,9 @@ function CrearUsuario(){
             Phone : inpPhone.value.trim(),
             Email : inpEmail.value.trim(),
             Date : inpDate.value.trim(),
-            Nacionalidad : inpNacion.value
+            Nacionalidad : inpNacion.value,
+            Puntos: 0,
+            Comprados : []
         };
         
         if(Usuarios.length == 0){
@@ -75,7 +130,6 @@ function CrearUsuario(){
             alert('Usuario Registrado Exitosamente');
             console.log(Usuarios);
         }
-    
         inpId.value = '';
         inpName.value = '';
         inpLastName.value = '';
@@ -101,6 +155,12 @@ function ModificarUsuario(){
     Usuarios[FilaSeleccionada] = User;
     ActualizarLista();
     localStorage.setItem("Users", JSON.stringify(Usuarios));
+    inpId.value = '';
+    inpName.value = '';
+    inpLastName.value = '';
+    inpEmail.value = '';
+    inpPhone.value = '';
+    inpDate.value = '2005-01-01';
 }
 
 //BORRAR USUARIO SELECCIONADO DE LA LISTA
@@ -110,8 +170,7 @@ function BorrarUsuario(){
         ActualizarLista();
         localStorage.setItem("Users", JSON.stringify(Usuarios));
     }
-    
-}
+};
 
 //CALCULAR EDAD DEL USUARIO A INGRESAR
 function calcularEdad(fecha) {
@@ -315,9 +374,3 @@ window.addEventListener('load', function() {
     console.log(Usuarios)
     ActualizarLista();
 });
-
-//EXPORTAR FUNCIONES Y DATOS
-export {CrearUsuario}
-export {ModificarUsuario}
-export {BorrarUsuario}
-export {paises}
