@@ -63,4 +63,5 @@ btnGenerar.addEventListener('click', function(){
 
 btnComprar.addEventListener('click', function(){
     AsignarJuego(SltUsuario.value, SltJuego.value);
+    localStorage.setItem("Users", JSON.stringify(Usuarios));
 })

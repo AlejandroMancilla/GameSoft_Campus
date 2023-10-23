@@ -85,9 +85,16 @@ function CrearFormulario(text, parrafo){
     Title.textContent = text + ' Usuario';
     TextDiv.textContent = parrafo;
     btnEnviar.textContent = text;
+    inpId.value = '';
+    inpName.value = '';
+    inpLastName.value = '';
+    inpEmail.value = '';
+    inpPhone.value = '';
+    inpDate.value = '2005-01-01';
     for(let i=0; i<paises.length; i++){
         inpNacion.innerHTML += `'<option value ='${paises[i]}'>${paises[i]}</option>`;
     }
+    
 };
 
 
@@ -155,6 +162,7 @@ function ModificarUsuario(){
         Puntos : Usuarios[FilaSeleccionada].Puntos,
         Juegos : Usuarios[FilaSeleccionada].Juegos
     };
+    alert('USUARIO MODIFICADO EXITOSAMENTE')
     Usuarios[FilaSeleccionada] = User;
     ActualizarLista();
     localStorage.setItem("Users", JSON.stringify(Usuarios));

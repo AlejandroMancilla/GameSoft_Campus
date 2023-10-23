@@ -6,8 +6,6 @@ window.addEventListener('load', function() {
     }
 });
 
-
-
 let Usuarios = [];
 window.addEventListener('load', function() {
     Usuarios = JSON.parse(localStorage.getItem("Users")  || "[]");

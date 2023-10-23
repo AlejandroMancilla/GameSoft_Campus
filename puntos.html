@@ -64,7 +64,38 @@
         </ul>
       </div>
 
+      <section class="users-section">
+          <div class="container-usuarios">
+            <h1>Puntos GameSoft</h1>
+            <div id="OrderDiv" style="display: flex; flex-direction: row;">
+              <h3>Ordenar por:</h3>
+              <button id="OrdId" class="button-49">Identificación</button>
+              <button id="OrdName" class="button-49">Nombre</button>
+              <button id="OrdPuntos" class="button-49">Puntos</button>
+              <button id="OrdInverter" class="button-49">Reverse Order</button>
+            </div>
+            <table id="ListUsers"></table>
+          </div>
+          <div class="container-details">
+            <div id="sidebar2">
+              <h2 id="NameForm">Detalle de Puntos</h2>
+              <p style="text-decoration: underline;"><em>Seleccione un Usuario de la lista</em></p>
+              <div id="Formulario" class="login-box">
+                <h3>Usuario</h3>
+                <input type="text" id="Usuario" disabled>
+                <h3>Puntos</h3>
+                <input type="text" id="Puntos" disabled>
+                <h3>Licencias Adquiridas</h3>
+                <ol id="ListaJuegos">
+                  
+                </ol>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
       <script src="scripts\main.js"></script>
-    
+      <script type="module" src="scripts/puntos.js"></script>
 </body>
 </html>
