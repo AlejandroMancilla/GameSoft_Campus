@@ -64,6 +64,70 @@
         </ul>
       </div>
 
-      <script src="scripts\main.js"></script>
+    <section class="users-section">
+      <div class="container-usuarios">
+        <h1>VideoJuegos - GameSoft</h1>
+        <div id="OrderDiv" style="display: flex; flex-direction: row;">
+          <h3>Ordenar por:</h3>
+          <button id="OrdId">ID</button>
+          <button id="OrdName">Nombre</button>
+        </div>
+        <table id="ListGames"></table>
+      </div>
+      <div class="container-datos">
+          <div class="user-options">
+            <div class="option-user" id="AddGame">
+              <i class='bx bx-joystick-button' style='color:#ffffff'></i>
+              <p>Añadir</p>
+            </div>  
+            <div class="option-user" id="DeleteGame">
+                <i class='bx bx-trash' style='color:#ffffff'></i>
+                <p>Eliminar</p>
+            </div>
+          </div>
+          <div id="sidebar">
+            <h2 id="NameForm"></h2>
+            <p id="TextList">Seleccione una opción del menú superior</p>
+            <div id="Formulario" class="login-box hide">
+              <form>
+                <div class="user-box">
+                  <input type="text" name="" required="" id="Id">
+                  <label>Identificación</label>
+                </div>
+                <div class="user-box">
+                  <input type="text" name="" required="" id="Name">
+                  <label>Nombres</label>
+                </div>
+                <div class="user-box">
+                  <input type="text" name="" required="" id="LastName">
+                  <label>Apellidos</label>
+                </div>
+                <div class="user-box">
+                  <input type="email" name="" required="" id="Email">
+                  <label>Correo</label>
+                </div>
+                <div class="user-box">
+                  <input type="tel" name="" required="" id="Phone">
+                  <label>Telefono</label>
+                </div>
+                <div class="user-box">
+                  <input type="date" name="" required="" value="2005-01-01" id="Date">
+                  <label>Fecha de Nacimiento</label>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                  <select name="" id="Nacionalidad" style="order: 2;">
+                    <option value="0" selected>Seleccione...</option>
+                  </select>
+                  <label style="order: 1;">Nacionalidad</label>
+                </div>
+              </form>
+            </div>
+            <button id="EnviarDatos">Registrar</button>
+         </div>
+        </div>
+    </section>
+
+  <script type="module" src="scripts\main.js"></script>
+  <script type="module" src="scripts\usuarios.js"></script>
 </body>
 </html>
