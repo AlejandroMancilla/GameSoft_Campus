@@ -2,9 +2,11 @@ let Juegos = [];
 window.addEventListener('load', function() {
     Juegos = JSON.parse(localStorage.getItem("Games")  || "[]");
     if(Juegos.length < 1){
-      Juegos = [{Cover:"https://a.espncdn.com/photo/2021/0709/r878390_864x1296_2-3.jpg",Id:"KNt3IL",Name:"FIFA 22",Precio:"250000",Puntos:"38",Tematica:"Aventura",Vendidos:0},{Cover:"https://im.ziffdavisinternational.com/ign_es/screenshot/r/rockstar-hace-publica-la-caratula-de-gta-5/rockstar-hace-publica-la-caratula-de-gta-5_e852.jpg",Id:"yzFz1P",Name:"Grand theft auto V",Precio:"120000",Puntos:"10",Tematica:"Aventura",Vendidos:0},{Cover:"https://www.si.com/.image/t_share/MTgyNDA0MzY4MTMyMjIwMjMy/cover---standard-edition.jpg",Id:"DhAS52",Name:"NBA 2K22",Precio:"180000",Puntos:"30",Tematica:"Aventura",Vendidos:0}];
+      Juegos = [{Cover:"https://e.snmc.io/lk/l/x/66fdc53b5c7eb111b423ac695da6afb1/5274919",Id:"ARlNTq",Name:"GTA: San Andreas",Precio:"12000",Puntos:"2",Tematica:"Aventura",Vendidos:0},{Cover:"https://plusgami.com/wp-content/uploads/2020/12/God-of-War-III-Remastered.jpg",Id:"vzj9NS",Name:"God of War III",Precio:"145000",Puntos:"20",Tematica:"Fantasía",Vendidos:0},{Cover:"https://a.espncdn.com/photo/2021/0709/r878390_864x1296_2-3.jpg",Id:"KNt3IL",Name:"FIFA 22",Precio:"250000",Puntos:"38",Tematica:"Aventura",Vendidos:0},{Cover:"https://im.ziffdavisinternational.com/ign_es/screenshot/r/rockstar-hace-publica-la-caratula-de-gta-5/rockstar-hace-publica-la-caratula-de-gta-5_e852.jpg",Id:"yzFz1P",Name:"Grand theft auto V",Precio:"120000",Puntos:"10",Tematica:"Aventura",Vendidos:0},{Cover:"https://www.si.com/.image/t_share/MTgyNDA0MzY4MTMyMjIwMjMy/cover---standard-edition.jpg",Id:"DhAS52",Name:"NBA 2K22",Precio:"180000",Puntos:"30",Tematica:"Aventura",Vendidos:0}];
     }
 });
+
+
 
 let Usuarios = [];
 window.addEventListener('load', function() {
